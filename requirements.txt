@@ -1,0 +1,11 @@
+# Backend
+fastapi
+uvicorn[standard]
+firebase-admin
+python-dotenv
+pydantic
+
+# Frontend
+streamlit
+pyrebase4
+requests
