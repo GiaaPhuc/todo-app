@@ -7,25 +7,27 @@ def get_todos() -> list:
     return r.json() if r.ok else []
 
 
-def create_todo(title: str, description: str) -> dict:
-    r = requests.post(
-        f"{BACKEND_URL}/todos",
-        json={"title": title, "description": description},
-        headers=get_auth_header(),
-    )
+def create_todo(title, description="", priority="medium",
+                due_date=None, assignee="", tags=[], notes="") -> dict:
+    payload = {
+        "title":       title,
+        "description": description,
+        "priority":    priority,
+        "due_date":    due_date,
+        "assignee":    assignee,
+        "tags":        tags,
+        "notes":       notes,
+    }
+    r = requests.post(f"{BACKEND_URL}/todos",
+                      json=payload, headers=get_auth_header())
     return r.json() if r.ok else {}
 
 
-def update_todo(todo_id: str, status: str):
-    requests.patch(
-        f"{BACKEND_URL}/todos/{todo_id}",
-        json={"status": status},
-        headers=get_auth_header(),
-    )
+def update_todo(todo_id: str, fields: dict):
+    requests.patch(f"{BACKEND_URL}/todos/{todo_id}",
+                   json=fields, headers=get_auth_header())
 
 
 def delete_todo(todo_id: str):
-    requests.delete(
-        f"{BACKEND_URL}/todos/{todo_id}",
-        headers=get_auth_header(),
-    )
+    requests.delete(f"{BACKEND_URL}/todos/{todo_id}",
+                    headers=get_auth_header())

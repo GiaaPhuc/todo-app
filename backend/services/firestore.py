@@ -7,17 +7,22 @@ def _db():
     return firestore.client()
 
 
-def create_todo(user_id: str, title: str, description: str) -> dict:
+def create_todo(user_id: str, data: dict) -> dict:
     doc_ref = _db().collection("todos").document()
-    data = {
-        "title": title,
-        "description": description,
-        "status": "pending",
-        "user_id": user_id,
-        "created_at": datetime.now(timezone.utc),
+    payload = {
+        "title":       data.get("title"),
+        "description": data.get("description", ""),
+        "status":      "pending",
+        "priority":    data.get("priority", "medium"),
+        "due_date":    data.get("due_date", None),
+        "assignee":    data.get("assignee", ""),
+        "tags":        data.get("tags", []),
+        "notes":       data.get("notes", ""),
+        "user_id":     user_id,
+        "created_at":  datetime.now(timezone.utc),
     }
-    doc_ref.set(data)
-    return {"id": doc_ref.id, **data}
+    doc_ref.set(payload)
+    return {"id": doc_ref.id, **payload}
 
 
 def get_todos(user_id: str) -> list:
@@ -30,8 +35,8 @@ def get_todos(user_id: str) -> list:
     return [{"id": doc.id, **doc.to_dict()} for doc in docs]
 
 
-def update_todo_status(todo_id: str, status: str):
-    _db().collection("todos").document(todo_id).update({"status": status})
+def update_todo(todo_id: str, fields: dict):
+    _db().collection("todos").document(todo_id).update(fields)
 
 
 def delete_todo(todo_id: str):

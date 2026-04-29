@@ -5,6 +5,41 @@ from utils.auth import is_logged_in
 
 st.set_page_config(page_title="Todo App", page_icon="✅", layout="centered")
 
+st.markdown("""
+<style>
+/* Ẩn sidebar mặc định nếu không dùng */
+[data-testid="stSidebar"] { display: none; }
+
+/* Card wrapper cho mỗi task */
+.task-card {
+    background: #FFF7ED;
+    border: 1px solid #FDBA74;
+    border-left: 4px solid #F97316;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+}
+
+/* Badge priority */
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+.badge-low      { background: #D1FAE5; color: #065F46; }
+.badge-medium   { background: #FEF3C7; color: #92400E; }
+.badge-high     { background: #FFEDD5; color: #9A3412; }
+.badge-urgent   { background: #FEE2E2; color: #991B1B; }
+.badge-tag      { background: #E0F2FE; color: #075985; }
+
+/* Divider nhạt */
+hr { border-color: #FDBA74; }
+</style>
+""", unsafe_allow_html=True)
+
 
 def handle_google_callback(code: str):
     """Đổi authorization code lấy Firebase idToken."""
