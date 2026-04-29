@@ -3,7 +3,7 @@
 # ✅ Todo App
 
 **Ứng dụng quản lý công việc cá nhân** — kiến trúc tách biệt Frontend / Backend,  
-xác thực Firebase, lưu trữ Cloud Firestore, giao diện Streamlit theme cam nhạt.
+xác thực Firebase, lưu trữ Cloud Firestore, giao diện Streamlit.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat-square&logo=fastapi&logoColor=white)
@@ -298,6 +298,6 @@ Nội dung demo:
 
 Made with ❤️ using **FastAPI** + **Streamlit** + **Firebase**
 
-**Võ Gia Phúc** · Lớp 24CTT3 · Đại học Khoa học Tự nhiên — ĐHQG TP.HCM
+**Võ Gia Phúc** · Lớp 24CTT3 · Trường Đại học Khoa học Tự nhiên — ĐHQG TP.HCM
 
 </div>
