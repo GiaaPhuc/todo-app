@@ -278,7 +278,10 @@ Frontend mở tại `http://localhost:8501`.
 
 ## 9 · Video Demo
 
-> 🎬 **Link video demo:** *(Cập nhật sau khi quay xong)*
+[![Demo Todo App](https://img.youtube.com/vi/shvbpgcYmu8/maxresdefault.jpg)](https://youtu.be/shvbpgcYmu8)
+
+> 🎬 **Xem trên YouTube:** [https://youtu.be/shvbpgcYmu8](https://youtu.be/shvbpgcYmu8)  
+> 📦 **Dự phòng (Google Drive):** [https://drive.google.com/file/d/1brU2LOXXMyt41U1m4cenpUygdf3A8_ig/view?usp=sharing](https://drive.google.com/file/d/1brU2LOXXMyt41U1m4cenpUygdf3A8_ig/view?usp=sharing)
 
 Nội dung demo:
 
